@@ -1,5 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+
+const Counter = function () {
+  const [state, setState] = useState({
+    count: 0,
+  });
+
+  const { count } = state;
+
+  function handleClick() {
+    setState({
+      count: count + 1,
+    });
+  }
+
+  return (
+    <button type="button" onClick={handleClick}>
+      Click me!
+      (
+      { count }
+      )
+    </button>
+  );
+};
 
 const Button = function ({ children }) {
   return (
@@ -24,6 +47,7 @@ const App = function () {
     <div>
       <p>Hello, world!</p>
       <p>Hi!</p>
+      <Counter />
       <Buttons />
     </div>
   );
