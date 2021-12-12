@@ -36,7 +36,7 @@ const Buttons = function () {
   return (
     <p>
       {[1, 2, 3].map((i) => (
-        <Button>{i}</Button>
+        <Button key={i}>{i}</Button>
       ))}
     </p>
   );
